@@ -1,0 +1,19 @@
+{
+  "name": "makestruct",
+  "version": "1.0.1",
+  "description": "Dynamically Generate Object Structures",
+  "main": "index.js",
+  "keywords": [
+    "structs",
+    "javascript",
+    "generator"
+  ],
+  "author": "joelbonetr",
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/JoelBonetR/structs-js"
+    }
+  ]
+}
