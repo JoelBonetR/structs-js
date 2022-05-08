@@ -5,7 +5,7 @@
  * @param {string} keys separated by a comma + whitespace. struct('id, name, age')
  * @returns {constructor} Constructor for the new struct
  */
-export default function makeStruct(keys) {
+module.exports = function makeStruct(keys) {
   if (!keys) return null;
   const k = keys.split(', ');
   const count = k.length;
@@ -15,4 +15,4 @@ export default function makeStruct(keys) {
     for (let i = 0; i < count; i++) this[k[i]] = arguments[i];
   }
   return constructor;
-}
+};

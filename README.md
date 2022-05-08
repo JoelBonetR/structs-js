@@ -28,10 +28,19 @@ makeStruct(keys);
 
 # Usage Examples
 
+## importing
+
+```javascript
+// in a module (like in a React component)
+import makeStruct from 'makestruct';
+// outside module (like in Node JS)
+const makestruct = require('makestruct');
+```
+
 ### Define some structure:
 
 ```javascript
-const User = makeStruct('id, name, country');
+const User = new makeStruct('id, name, country');
 ```
 
 ### Instantiate your new structure
@@ -52,7 +61,7 @@ foo.country; // 'UK'
 
 ```javascript
 // Define a structure
-const User = makeStruct('id, name, country');
+const User = new makeStruct('id, name, country');
 // Define another structure
 const UserDetails = new makeStruct('phone, age, hairColor');
 // Instantiate the inner struct first
