@@ -18,7 +18,7 @@ npm i makestruct
 
 ```javascript
 /**
- * @param {string} keys separated by a comma + whitespace. struct('id, name, age')
+ * @param {string} keys separated by a comma + whitespace. makeStruct('id, name, age')
  * @returns {constructor} Constructor for the new struct
  */
 makeStruct(keys);
