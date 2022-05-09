@@ -1,6 +1,6 @@
 # makeStruct
 
-**MakeStruct** is a lightweight fast dynamic **constructor generator** for JavaScript.
+**MakeStruct** is a lightweight fast **dynamic constructor generator** for JavaScript.
 
 The aim of makeStruct is to easily generate objects with dynamic properties on the fly.
 
