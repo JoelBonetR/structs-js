@@ -1,5 +1,11 @@
 # makeStruct
 
+**MakeStruct** is a lightweight fast dynamic **constructor generator** for JavaScript.
+
+The aim of makeStruct is to easily generate objects with dynamic properties on the fly.
+
+### concept
+
 A struct is used for building data structures. These structures or records are used to group related data together.
 
 <hr />
@@ -16,17 +22,40 @@ npm i makestruct
 
 # Reference
 
+makeStruct constructor definition:
+
 ```javascript
 /**
+ * @constructor Generates a constructor for a given data structure
  * @param {string} keys separated by a comma + whitespace. makeStruct('id, name, age')
  * @returns {constructor} Constructor for the new struct
  */
-makeStruct(keys);
+```
+
+## Overview:
+
+```javascript
+const Dog = new makeStruct('id, name, breed');
+// Dog -> Function, constructor()
+const myDog = new Dog(1, 'baxter', 'New Scotland Retriever');
+myDog; // { id: 1, name: 'baxter', breed: 'New Scotland Retriever' }
+
+myDog.id; // returns 1
+myDog.name; // returns 'baxter'
+myDog.breed; // returns 'New Scotland Retriever'
+```
+
+### Type information about the example above
+
+```javascript
+typeof myDog.id; // 'number'
+typeof myDog.breed; // 'string'
+typeof myDog; // 'object'
+myDog instanceof Dog; // true
+Dog.prototype.isPrototypeOf(myDog); // true
 ```
 
 <hr />
-
-# Usage Examples
 
 ## importing
 
@@ -105,16 +134,24 @@ const UserInfo = new makeStruct('phone, age, hairColor');
 const extraInfo = new UserInfo('555-777-888', 31, 'blonde');
 ```
 
-Typechecking will not happen while instantiating the UserInfo struct, but while accessing it.
+TypeScript example:
 
-Example:
+```ts
+type Dog = {
+  id: number;
+  name: string;
+  breed: string;
+};
 
-```javascript
-extraInfo.age.includes(); // Property 'includes' does not exist on type 'number'.ts(2339)
+const LeDog = new makeStruct('id, name, breed');
+const myDog: Dog = new LeDog(1, 'baxter', 'Retriever');
+
+myDog.id.includes(); // Property 'includes' does not exist on type 'number'.ts(2339)
 ```
 
 # Project Status
 
 - The project is provided as is without warranties of any kind.
+- I may add d.ts in future updates but ts-pragma along with JSDoc should suffice to export types for the constructor that returns a constructor. You'll need to define your own types for the objects you create with **makeStruct** either way.
 - If you face any problem feel free to open a new issue and I'll try to look at it asap.
 - Same applies for any pull request. The project is open source and It's maintained through collaborators or by my own.
