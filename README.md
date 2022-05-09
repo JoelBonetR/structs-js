@@ -1,4 +1,4 @@
-# structs-js
+# makeStruct
 
 A struct is used for building data structures. These structures or records are used to group related data together.
 
