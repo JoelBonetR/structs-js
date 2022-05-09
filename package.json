@@ -1,6 +1,6 @@
 {
   "name": "makestruct",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Dynamically Generate Object Structures",
   "main": "index.js",
   "keywords": [
