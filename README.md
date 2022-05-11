@@ -101,7 +101,7 @@ myDynamicObject.toArray(); // [['id', 1], ['name', 'John'], ['email', 'john@doe.
 ## Overview:
 
 ```js
-const Dog = new makeStruct('id, name, breed'); // or const Dog = new makeStruct('id,name,breed');
+const Dog = new makeStruct('id, name, breed');
 // Dog -> Function, constructor()
 const myDog = new Dog(1, 'baxter', 'New Scotland Retriever');
 myDog; // { id: 1, name: 'baxter', breed: 'New Scotland Retriever' }
